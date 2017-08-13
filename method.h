@@ -29,16 +29,6 @@ public:
 
 };
 
-
-class MethodHeat : public Method
-{
-public:
-    virtual void convertToParam(int, Param&) {};
-    virtual void init() {};
-    virtual void run() {};
-};
-
-
 class MethodGas : public Method
 {
 public:

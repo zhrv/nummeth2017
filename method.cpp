@@ -1,4 +1,5 @@
 #include "method.h"
+#include "MethodHeat.h"
 #include <cstdio>
 
 Method* Method::create(int methodCode) {
