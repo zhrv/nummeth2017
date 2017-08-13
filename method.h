@@ -1,3 +1,4 @@
+#pragma once
 #include "mesh.h"
 
 #define METHOD_CODE_HEAT 1
@@ -20,7 +21,7 @@ protected:
     Mesh * mesh;
 public:
     virtual void convertToParam(int, Param&) = 0;
-    void saveVTK(char* fName);
+    void saveVTK(int step);
     virtual void init() = 0;
     virtual void run() = 0;
 
@@ -28,15 +29,19 @@ public:
 
 };
 
+
 class MethodHeat : public Method
 {
+public:
     virtual void convertToParam(int, Param&) {};
     virtual void init() {};
     virtual void run() {};
 };
 
+
 class MethodGas : public Method
 {
+public:
     virtual void convertToParam(int, Param&) {};
     virtual void init() {};
     virtual void run() {};
