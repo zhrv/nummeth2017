@@ -14,6 +14,10 @@ public:
 protected:
 
     double *T;
+    double *intT;
+
+    double TMAX;
+    double TAU;
 };
 
 
