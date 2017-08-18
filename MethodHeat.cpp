@@ -97,5 +97,6 @@ void MethodHeat::run()
 
 MethodHeat::~MethodHeat()
 {
-    delete[] T, intT, mesh;
+    delete mesh;
+    delete[] T, intT;
 }

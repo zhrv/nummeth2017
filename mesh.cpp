@@ -209,3 +209,11 @@ int Mesh::findEdge(int n1, int n2)
     }
     return -1;
 }
+
+
+Mesh::~Mesh() { delete[] edges, cells, nodes; }
+
+Cell::~Cell() { delete[] nodesInd, edgesInd; }
+
+
+Edge::~Edge() { delete[] c; }
