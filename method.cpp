@@ -1,6 +1,8 @@
 #include "method.h"
 #include "MethodHeat.h"
+#include "MethodGas.h"
 #include <cstdio>
+#include <cstdlib>
 
 Method* Method::create(int methodCode) {
     switch (methodCode) {
@@ -16,6 +18,10 @@ void Method::saveVTK(int step) {
 
     sprintf(fName, "res_%010d.vtk", step);
     FILE * fp = fopen(fName, "w");
+    if (!fp) {
+        fprintf(stderr, "Can not open file '%s'\n", fName);
+        exit(1);
+    }
     fprintf(fp, "# vtk DataFile Version 2.0\n");
     fprintf(fp, "GASDIN data file\n");
     fprintf(fp, "ASCII\n");
