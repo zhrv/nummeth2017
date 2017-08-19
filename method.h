@@ -13,6 +13,8 @@ struct Param
     double e;		//!< внутренняя   энергия
     double T;		//!< температура
     double M;		//!< число  Маха
+
+    inline double magU() { return u*u+v*v; };
 };
 
 class Method
@@ -29,10 +31,3 @@ public:
 
 };
 
-class MethodGas : public Method
-{
-public:
-    virtual void convertToParam(int, Param&) {};
-    virtual void init() {};
-    virtual void run() {};
-};
