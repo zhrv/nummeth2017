@@ -89,7 +89,16 @@ void MethodHeat::run()
 
         if (step % 10000 == 0)
         {
-            saveVTK(step);
+            try {
+                saveVTK(step);
+            } catch (int code) {
+                if (code == 1){
+                    printf("Exception have been encountered: value is not a number");
+                    break;
+                } else {
+                    printf("Exception have been caught, but it's impossible to identify it.");
+                }
+            }
             printf("Calculation results for step %d are saved.\n", step);
         }
     }
