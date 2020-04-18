@@ -49,6 +49,10 @@ void Method::saveVTK(int step) {
     {
         Param p;
         convertToParam(i, p);
+        // This condition will fail only in case if p.p is NaN
+        if (p.p != p.p) {
+            throw 1;
+        }
         fprintf(fp, "%25.16f ", p.r);
         if (i+1 % 8 == 0 || i+1 == mesh->cCount) fprintf(fp, "\n");
     }
@@ -58,6 +62,10 @@ void Method::saveVTK(int step) {
     {
         Param p;
         convertToParam(i, p);
+        // This condition will fail only in case if p.p is NaN
+        if (p.p != p.p) {
+            throw 1;
+        }
         fprintf(fp, "%25.16f ", p.p);
         if (i+1 % 8 == 0 || i+1 == mesh->cCount) fprintf(fp, "\n");
     }
